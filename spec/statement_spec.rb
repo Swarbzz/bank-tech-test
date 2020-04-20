@@ -12,7 +12,7 @@ describe Statement do
     end
 
     describe "creating a transaction" do
-      it "a new transaction should not be inside a statement" do
+      it "a new transaction should be inside a statement" do
         statement.record << transaction
         expect(statement.record).to eq [transaction]
       end
