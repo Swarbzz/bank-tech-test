@@ -1,5 +1,6 @@
 require_relative 'transaction'
 require_relative 'statement'
+require_relative 'view'
 
 class Account
 
@@ -10,26 +11,26 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    update_transactions(amount)
+    update_transactions(amount, "")
   end
 
   def withdraw(amount)
     @balance -= amount
-    update_transactions(-amount)
+    update_transactions("", amount)
   end
 
   def balance
     @balance
   end
 
-  def statement
-    @statement.record
+  def statement(view = View.new)
+    view.show(@statement.record)
   end
 
   private
 
-  def update_transactions(amount)
-    transaction = Transaction.new(amount, @balance)
+  def update_transactions(credit = "", debit = "")
+    transaction = Transaction.new(credit, debit, @balance)
     @statement.record << transaction
   end
 end

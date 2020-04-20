@@ -1,6 +1,7 @@
 require './lib/statement'
 
 describe Statement do
+  let(:transaction) { Transaction.new(5.00, nil, 10.00) }
   subject(:statement) { described_class.new }
   
   context 'New Statement' do
