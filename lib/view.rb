@@ -1,6 +1,6 @@
 class View
 
-  Header = ["date || credit || debit || balance"]
+  Header = ["date",  "credit", "debit", "balance"]
   HeaderLength = [4,6,5,7]
   
   def show(statement, header = Header)
