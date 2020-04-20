@@ -7,6 +7,7 @@ describe Account do
     describe '#Initialize' do
       it 'has an empty balance' do
         expect(account.balance).to eq 0
+        expect(account.statement). to eq []
       end
     end
 
