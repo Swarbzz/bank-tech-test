@@ -7,7 +7,7 @@ describe View do
 
   context "View the Statement" do
     describe "#show" do
-      xit "displays an empty balance" do
+      it "displays an empty balance" do
         statement.record << transaction 
         expect(view.show(statement)).to eq "date || credit || debit || balance"
       end
