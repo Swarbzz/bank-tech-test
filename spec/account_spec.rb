@@ -1,7 +1,8 @@
 require './lib/account'
 
 describe Account do
-  subject(:account) { described_class.new }
+  let(:statement) { Statement.new }
+  subject(:account) { described_class.new(statement) }
 
   context 'New account' do
     describe '#Initialize' do

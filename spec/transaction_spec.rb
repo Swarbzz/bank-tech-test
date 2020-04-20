@@ -7,8 +7,9 @@ describe Transaction do
     describe '#initialize' do
       it 'makes a deposit' do
         Timecop.freeze do
-          transaction = Transaction.new(5.00, 10.00)
-          expect(transaction.amount).to eq 5.00
+          transaction = Transaction.new(5.00, nil, 10.00)
+          expect(transaction.credit).to eq 5.00
+          expect(transaction.debit).to eq nil
           expect(transaction.balance).to eq 10.00
           expect(transaction.date).to eq Time.now
         end
@@ -16,8 +17,9 @@ describe Transaction do
 
       it 'makes a withdrawal' do
         Timecop.freeze do
-          transaction = Transaction.new(-5.00, 5.00)
-          expect(transaction.amount).to eq -5.00
+          transaction = Transaction.new(nil, 5.00, 5.00)
+          expect(transaction.credit).to eq nil
+          expect(transaction.debit).to eq 5.00
           expect(transaction.balance).to eq 5.00
           expect(transaction.date).to eq Time.now
         end
