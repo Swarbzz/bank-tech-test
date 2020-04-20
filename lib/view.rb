@@ -7,11 +7,12 @@ class View
     @view_output = []
     @final = []
     @view_output << Header
+    p @view_output
     create_output(statement)
     add_space
     @final.join("\n")
   end
-
+ 
   private
 
   def create_output(statement)
@@ -47,5 +48,6 @@ class View
       @final << output.join(" || ")
     end
   end
+  p @final
     
 end
