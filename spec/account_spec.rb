@@ -9,5 +9,13 @@ describe Account do
         expect(account.balance).to eq 0
       end
     end
+
+    describe "#deposit" do
+      it "can deposity money into account" do
+      account.deposit(5.00)
+      expect(account.balance).to eq 5.00
+      end
+    end
   end
+  
 end
