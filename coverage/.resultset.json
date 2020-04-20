@@ -80,8 +80,44 @@
           null,
           null
         ]
+      },
+      "/Users/student/Desktop/Projects/bank-tech-test/spec/transaction_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Desktop/Projects/bank-tech-test/lib/transaction.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1587378685
+    "timestamp": 1587380090
   }
 }
