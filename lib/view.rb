@@ -21,8 +21,8 @@ class View
       output << credit(transaction.credit)
       output << debit(transaction.debit)
       output << "#{'%.02f' % transaction.balance}"
-      (0..HeaderLength.length - 1).each do |i|
-        HeaderLength[i] = output[i].length if output[i].length > HeaderLength[i]
+      (0..HEADERLENGTH.length - 1).each do |i|
+        HEADERLENGTH[i] = output[i].length if output[i].length > HEADERLENGTH[i]
       end
       @view_output << output
     end
