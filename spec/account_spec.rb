@@ -25,6 +25,9 @@ describe Account do
         account.withdraw(2.50)
         expect(account.balance).to eq 2.50
       end
+      it 'raises an error if the client withdraws more than he has' do
+        expect(account.withdraw(10)).to raise_error "Insufficient funds"
+      end
     end
   end
 end

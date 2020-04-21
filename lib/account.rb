@@ -15,6 +15,7 @@ class Account
   end
 
   def withdraw(amount)
+    fail "Insufficient funds" if @balance < amount
     @balance -= amount
     update_transactions("", amount)
   end
