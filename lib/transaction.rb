@@ -5,7 +5,7 @@ class Transaction
     @credit = credit
     @debit = debit
     @balance = balance
-    @date = Time.now
+    @date = Time.now.strftime("%m/%d/%Y")
   end
 
 end

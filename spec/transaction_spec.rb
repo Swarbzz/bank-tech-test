@@ -11,7 +11,7 @@ describe Transaction do
           expect(transaction.credit).to eq 5.00
           expect(transaction.debit).to eq nil
           expect(transaction.balance).to eq 10.00
-          expect(transaction.date).to eq Time.now
+          expect(transaction.date).to eq Time.now.strftime("%m/%d/%Y")
         end
       end
 
@@ -21,7 +21,7 @@ describe Transaction do
           expect(transaction.credit).to eq nil
           expect(transaction.debit).to eq 5.00
           expect(transaction.balance).to eq 5.00
-          expect(transaction.date).to eq Time.now
+          expect(transaction.date).to eq Time.now.strftime("%m/%d/%Y")
         end
       end
     end

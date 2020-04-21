@@ -19,9 +19,7 @@ class Account
     update_transactions("", amount)
   end
 
-  def balance
-    @balance
-  end
+  attr_reader :balance
 
   def statement(view = View.new)
     view.show(@statement.record)

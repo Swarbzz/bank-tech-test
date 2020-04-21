@@ -1,7 +1,7 @@
 class Statement
   attr_reader :record
 
-  def initialize()
+  def initialize
     @record = []
   end
   

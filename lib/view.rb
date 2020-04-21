@@ -1,27 +1,27 @@
 class View
 
-  Header = ["date",  "credit", "debit", "balance"]
-  HeaderLength = [4,6,5,7]
+  HEADER = ["date", "credit", "debit", "balance"]
+  HEADERLENGTH = [4, 6, 5, 7]
   
-  def show(statement, header = Header)
+  def show(_statement, _header = HEADER)
     @view_output = []
     @final = []
-    @view_output << Header
-    create_output(statement)
+    @view_output << HEADER
+    create_output(_statement)
     add_space
     @final.join("\n")
-  end
- 
+  end  
+
   private
 
-  def create_output(statement)
-    statement.each do |transaction|
+  def create_output(_statement)
+    _statement.each do |transaction| 
       output = []
-      output << transaction.date.strftime("%m/%d/%Y")
+      output << transaction.date
       output << credit(transaction.credit)
       output << debit(transaction.debit)
-      output << "#{ '%.02f' % transaction.balance }"
-      (0..HeaderLength.length-1).each do |i|
+      output << "#{'%.02f' % transaction.balance}"
+      (0..HeaderLength.length - 1).each do |i|
         HeaderLength[i] = output[i].length if output[i].length > HeaderLength[i]
       end
       @view_output << output
@@ -47,6 +47,5 @@ class View
       @final << output.join(" || ")
     end
   end
-  p @final
     
 end
